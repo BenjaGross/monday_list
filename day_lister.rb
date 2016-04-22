@@ -13,13 +13,3 @@ end
 def map_days(day, n)
   (0...n).map{ |i| (day + (i * 7)).strftime("%m/%d/%Y") }
 end
-
-
-
-
-def foo(args={})
-  args[:fruit]    ||= 'apple'
-  args[:cut]      ||= 'sliced'
-  args[:topping]  ||= 'ice cream'
-  # some logic here
-end
