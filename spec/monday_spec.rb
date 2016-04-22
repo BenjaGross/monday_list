@@ -5,6 +5,7 @@ describe 'Mondays' do
 
   not_monday_start = Date.new(2016, 04, 22) 
   monday_start = Date.new(2016, 4, 25) 
+  sunday_start = Date.new(2016, 4, 24)
   expected_day1 = Date.new(2016, 4, 25).strftime("%m/%d/%Y") 
   expected_day2 = Date.new(2016, 5, 2).strftime("%m/%d/%Y") 
   expected_day3 = Date.new(2016, 5, 9).strftime("%m/%d/%Y") 
@@ -12,6 +13,10 @@ describe 'Mondays' do
 
   it 'lists the next n upcoming mondays from a given date' do 
     expect(list_mondays(3, not_monday_start)).to eq([expected_day1, expected_day2, expected_day3])
+  end
+
+  it 'lists the next n upcoming mondays when the given date is a Sunday' do 
+    expect(list_mondays(3, sunday_start)).to eq([expected_day1, expected_day2, expected_day3])
   end
 
 

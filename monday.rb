@@ -1,12 +1,12 @@
 require 'date'
+require 'pry'
 
 def list_mondays(n, day=Date.today)
-  days_in_week = 7
   if day.wday == 1
     map_days(day, n)
   else 
-    num = (days_in_week - (day.wday % days_in_week )) + 1
-    map_days(day + num, n)
+    next_monday = day + ((1 - day.wday) % 7)
+    map_days(next_monday, n)
   end
 end
 
